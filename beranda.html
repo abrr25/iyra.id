@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beranda - Iyra.id</title>
+    <!-- Memuat Tailwind CSS CDN untuk styling modern -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Memuat library @tailwindplus/elements untuk komponen dialog mobile -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1"
+      type="module"
+    ></script>
+    <style>
+      /* Custom gradient for the hero section to simulate the pink/white blend */
+      .hero-gradient {
+        background: linear-gradient(
+          135deg,
+          #fce7f3 0%,
+          #fbcfe8 100%
+        ); /* Light Pink Gradient */
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <div class="min-h-screen flex flex-col">
+      <header class="fixed inset-x-0 top-0 z-50 bg-white shadow-lg">
+        <nav
+          aria-label="Global"
+          class="flex items-center justify-between p-6 lg:px-8"
+        >
+          <div class="flex lg:flex-1">
+            <a href="beranda.html" class="-m-1.5 p-1.5">
+              <span class="sr-only">Iyra.id</span>
+              <!-- Logo Iyra.id (Pink) -->
+              <span class="text-2xl font-bold tracking-tight text-pink-700"
+                >Iyra.<span class="text-pink-500">id</span></span
+              >
+            </a>
+          </div>
+
+          <div class="flex lg:hidden">
+            <button
+              type="button"
+              command="show-modal"
+              commandfor="mobile-menu"
+              class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            >
+              <span class="sr-only">Buka menu utama</span>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                data-slot="icon"
+                aria-hidden="true"
+                class="size-6"
+              >
+                <path
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div class="hidden lg:flex lg:gap-x-12">
+            <!-- Navigasi Utama -->
+            <a
+              href="produk.html"
+              class="text-sm/6 font-semibold text-gray-700 hover:text-pink-500"
+              >Produk</a
+            >
+            <a
+              href="Bio_brand.html"
+              class="text-sm/6 font-semibold text-gray-700 hover:text-pink-500"
+              >Tentang Kami</a
+            >
+          </div>
+          <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+            <a href="produk.html" class="text-sm/6 font-semibold text-pink-700"
+              >Pesan Sekarang <span aria-hidden="true">&rarr;</span></a
+            >
+          </div>
+        </nav>
+
+        <!-- Mobile Menu Dialog -->
+        <el-dialog>
+          <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+            <div tabindex="0" class="fixed inset-0 focus:outline-none">
+              <el-dialog-panel
+                class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-pink-50 p-6 sm:max-w-sm sm:ring-1 sm:ring-pink-200"
+              >
+                <div class="flex items-center justify-between">
+                  <a href="beranda.html" class="-m-1.5 p-1.5">
+                    <span class="sr-only">Iyra.id</span>
+                    <span
+                      class="text-2xl font-bold tracking-tight text-pink-700"
+                      >Iyra.<span class="text-pink-500">id</span></span
+                    >
+                  </a>
+                  <button
+                    type="button"
+                    command="close"
+                    commandfor="mobile-menu"
+                    class="-m-2.5 rounded-md p-2.5 text-gray-700"
+                  >
+                    <span class="sr-only">Tutup menu</span>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      data-slot="icon"
+                      aria-hidden="true"
+                      class="size-6"
+                    >
+                      <path
+                        d="M6 18 18 6M6 6l12 12"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div class="mt-6 flow-root">
+                  <div class="-my-6 divide-y divide-pink-200">
+                    <div class="space-y-2 py-6">
+                      <a
+                        href="produk.html"
+                        class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-700 hover:bg-pink-100"
+                        >Produk</a
+                      >
+                      <a
+                        href="Bio_brand.html"
+                        class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-700 hover:bg-pink-100"
+                        >Tentang Kami</a
+                      >
+                    </div>
+                    <div class="py-6">
+                      <a
+                        href="produk.html"
+                        class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-pink-700 hover:bg-pink-100"
+                        >Pesan Sekarang</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </el-dialog-panel>
+            </div>
+          </dialog>
+        </el-dialog>
+      </header>
+
+      <!-- Bagian Utama Halaman -->
+      <main class="flex-grow">
+        <div
+          class="relative isolate px-6 pt-14 lg:px-8 hero-gradient min-h-screen flex items-center justify-center"
+        >
+          <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56 text-center">
+            <div class="flex justify-center mb-8">
+              <!-- Logo di tengah halaman -->
+              <div
+                class="w-28 h-28 bg-white rounded-full flex justify-center items-center shadow-xl border-4 border-pink-500 p-2"
+              >
+                <!-- Ganti src dengan path logo Anda -->
+                <img
+                  src="fotoproduk/logo.jpg"
+                  alt="Logo Iyra.id"
+                  class="w-full h-full object-contain rounded-full"
+                  onerror="this.onerror=null;this.src='https://placehold.co/100x100/fbcfe8/db2777?text=Iyra';"
+                />
+              </div>
+            </div>
+
+            <div>
+              <h1
+                class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
+              >
+                Cita Rasa Lokal, Sensasi Viral
+              </h1>
+
+              <!-- Deskripsi Brand -->
+              <p
+                class="mt-8 text-lg font-medium text-pretty text-gray-600 sm:text-xl/8"
+              >
+                Berawal dari hobi membuat hampers dan kue kering di Ramadhan
+                2024, Iyra.id secara tak terduga menemukan titik balik saat
+                cireng buatan kami mendapat respons luar biasa. Kesuksesan dan
+                popularitas yang viral mendorong kami untuk terus berinovasi dan
+                memperluas varian produk, termasuk Tela-tela, Bakso & Mie Jebew,
+                dan lainnya. Kini, dengan kemudahan akses melalui GrabFood dan
+                ShopeeFood, kami berkomitmen untuk menyajikan kelezatan terbaik.
+              </p>
+
+              <div class="mt-10 flex items-center justify-center gap-x-6">
+                <a
+                  href="produk.html"
+                  class="rounded-full bg-pink-600 px-6 py-3 text-lg font-semibold text-white shadow-lg hover:bg-pink-500 transition duration-300"
+                  >Lihat Semua Produk</a
+                >
+                <a
+                  href="Bio_brand.html"
+                  class="text-lg font-semibold text-pink-700 hover:text-pink-500 transition duration-300"
+                  >Tentang Iyra.id <span aria-hidden="true">→</span></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- ===== BAGIAN FOOTER BARU DIMULAI DI SINI ===== -->
+      <footer class="bg-white border-t border-gray-200">
+        <div
+          class="mx-auto max-w-7xl px-6 py-8 md:flex md:items-center md:justify-between lg:px-8"
+        >
+          <div class="flex justify-center space-x-6 md:order-2">
+            <!-- Ikon Instagram -->
+            <a
+              href="https://www.instagram.com/iyra.id?igsh=dW91eWI5aWE3Nnd0"
+              class="text-gray-400 hover:text-pink-500"
+            >
+              <span class="sr-only">Instagram</span>
+              <svg
+                class="h-6 w-6"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 012.153 2.153c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-2.153 2.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-2.153-2.153c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 012.153-2.153c.636-.247 1.363.416 2.427.465C9.53 2.013 9.884 2 12.315 2zm-1.002 6.363a4.25 4.25 0 102.004 8.5 4.25 4.25 0 00-2.004-8.5zM12 15.25a3.25 3.25 0 110-6.5 3.25 3.25 0 010 6.5zm6.3-7.572a1.125 1.125 0 100-2.25 1.125 1.125 0 000 2.25z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+            <!-- Ikon Shopee / bisa diganti ikon lain -->
+            <a
+              href="https://id.shp.ee/kTQmVyx"
+              class="text-gray-400 hover:text-pink-500"
+            >
+              <span class="sr-only">Shopee</span>
+              <svg
+                class="h-6 w-6"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  d="M21.5,8.6c-0.3-0.8-1-1.4-1.9-1.4H4.4c-0.9,0-1.6,0.6-1.9,1.4L1,15.2V16c0,0.8,0.7,1.5,1.5,1.5h1 c0.8,0,1.5-0.7,1.5-1.5v-0.1l1.5-4.5h11l1.5,4.5V16c0,0.8,0.7,1.5,1.5,1.5h1c0.8,0,1.5-0.7,1.5-1.5v-0.8L21.5,8.6z M5.8,11.2 L4.9,13.7h-1L5.8,11.2z M8,11.2l-0.9,2.5H6.2L8,11.2z M17.1,13.7H16l-0.9-2.5l1.9-0.1L17.1,13.7z M19.1,13.7h-1l-0.9-2.5l1.9-0.1 L19.1,13.7z M12,7.5c-1.4,0-2.5,1.1-2.5,2.5S10.6,12.5,12,12.5s2.5-1.1,2.5-2.5S13.4,7.5,12,7.5z"
+                />
+              </svg>
+            </a>
+          </div>
+          <div class="mt-8 md:order-1 md:mt-0">
+            <p class="text-center text-sm leading-5 text-gray-500">
+              &copy; <span id="copyright-year"></span> Iyra.id. Semua hak cipta
+              dilindungi.
+            </p>
+          </div>
+        </div>
+      </footer>
+      <!-- ===== BAGIAN FOOTER BARU BERAKHIR DI SINI ===== -->
+    </div>
+
+    <script>
+      // Script sederhana untuk menampilkan tahun copyright secara dinamis
+      document.getElementById("copyright-year").textContent =
+        new Date().getFullYear();
+    </script>
+  </body>
+</html>

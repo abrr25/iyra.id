@@ -1,0 +1,264 @@
+@import url("https://fonts.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+:root {
+  --primary-color: #ff5733; /* Oranye */
+  --secondary-color: #de154e; /* Merah */
+  --text-color: #333;
+  --white-color: #fff;
+  --background-gradient: linear-gradient(
+    135deg,
+    var(--secondary-color),
+    var(--primary-color)
+  );
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* --- Header & Navigasi --- */
+header {
+  background: var(--white-color);
+  color: var(--text-color);
+  padding: 1rem 5%;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.4s ease-in-out;
+}
+
+header.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.logo span {
+  color: var(--primary-color);
+}
+
+.logo:active {
+  transform: scale(0.95);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--primary-color);
+}
+
+/* --- Bagian Utama Halaman --- */
+.hero {
+  height: 100vh;
+  background: var(--background-gradient);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 5%;
+  color: var(--white-color);
+}
+
+.main-gradient {
+  background: var(--background-gradient);
+  min-height: calc(100vh - 80px);
+  padding-top: 80px;
+}
+
+.content-block {
+  background: var(--white-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin: 2rem 5%;
+  padding: 3rem;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--secondary-color);
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  background: var(--white-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 1.5rem;
+}
+
+.product-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+/* --- Style untuk Halaman Varian Produk --- */
+.variant-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.variant-card {
+  background: var(--white-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 300px;
+}
+
+.variant-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.variant-info {
+  padding: 1.5rem;
+}
+
+.variant-price {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* --- Footer --- */
+footer {
+  background-color: var(--text-color);
+  color: var(--white-color);
+  text-align: center;
+  padding: 1.5rem;
+}
+
+/* --- Efek Interaktif --- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.main-logo {
+  width: 150px;
+  height: 150px;
+  background-color: var(--white-color);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.main-logo img {
+  width: 90px;
+  height: 90px;
+}
+/* --- Tombol Kembali --- */
+.back-button {
+  display: inline-block;
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+  padding: 10px 20px;
+  margin-bottom: 2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-2px);
+}
