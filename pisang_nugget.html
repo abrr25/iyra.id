@@ -3,85 +3,201 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>pisang nugget - Iyra.id</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Pisang Nugget - Iyra.id</title>
+    <!-- Memuat Tailwind CSS untuk styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Memuat Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Custom styles untuk melengkapi Tailwind */
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f7fafc;
+      }
+      .logo span {
+        color: #f59e0b; /* Warna kuning-oranye */
+      }
+      /* Animasi fade-in sederhana */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .fade-in {
+        animation: fadeIn 0.8s ease-out forwards;
+      }
+      /* Menerapkan animasi pada setiap kartu dengan sedikit penundaan */
+      .variant-card {
+        opacity: 0; /* Mulai dengan transparan untuk animasi */
+      }
+      .variant-card:nth-child(1) {
+        animation-delay: 0.2s;
+      }
+      .variant-card:nth-child(2) {
+        animation-delay: 0.4s;
+      }
+      .variant-card:nth-child(3) {
+        animation-delay: 0.6s;
+      }
+      .variant-card:nth-child(4) {
+        animation-delay: 0.8s;
+      }
+      .variant-card:nth-child(5) {
+        animation-delay: 1s;
+      }
+    </style>
   </head>
-  <body>
-    <header>
-      <div class="logo">Iyra.<span>id</span></div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Beranda</a></li>
-          <li><a href="produk.html">Produk</a></li>
-          <li><a href="Bio_brand.html">Tentang Kami</a></li>
-        </ul>
-      </nav>
+  <body class="bg-gray-50 text-gray-800">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-10">
+      <div
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <div class="logo text-2xl font-bold text-gray-800">
+          Iyra.<span>id</span>
+        </div>
+        <nav>
+          <ul class="flex space-x-6">
+            <li>
+              <a
+                href="index.html"
+                class="text-gray-600 hover:text-amber-500 transition duration-300"
+                >Beranda</a
+              >
+            </li>
+            <li>
+              <a
+                href="produk.html"
+                class="text-amber-500 font-semibold border-b-2 border-amber-500 pb-1"
+                >Produk</a
+              >
+            </li>
+            <li>
+              <a
+                href="Bio_brand.html"
+                class="text-gray-600 hover:text-amber-500 transition duration-300"
+                >Tentang Kami</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
-    <main class="main-gradient">
-      <section class="content-block">
-        <a href="produk.html" class="back-button">← Kembali ke Produk</a>
+    <!-- Main Content -->
+    <main class="py-12">
+      <div class="container mx-auto px-6">
+        <section class="bg-white rounded-2xl shadow-lg p-6 md:p-10">
+          <a
+            href="produk.html"
+            class="inline-block mb-8 text-amber-600 hover:text-amber-700 transition duration-300"
+            >← Kembali ke Produk</a
+          >
 
-        <h2>Pisang nugget</h2>
-        <div class="variant-list fade-in">
-          <div class="variant-card">
-            <img
-              src="fotoproduk/pisang_nuget-coklat_keju.jpg"
-              alt="Pisang nugget Coklat Keju"
-            />
-            <div class="variant-info">
-              <h3>Coklat</h3>
-              <p class="variant-price">Rp 15.000</p>
+          <h2 class="text-4xl font-bold text-center text-gray-800 mb-10">
+            Varian Pisang Nugget
+          </h2>
+
+          <!-- Daftar Varian Produk -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Kartu Varian 1 -->
+            <div
+              class="variant-card fade-in bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out"
+            >
+              <img
+                src="fotoproduk/pisang_nuget-coklat_keju.jpg"
+                alt="Pisang nugget Coklat Keju"
+                class="w-full h-56 object-cover"
+              />
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2 capitalize">Coklat</h3>
+                <p class="text-lg font-semibold text-amber-600">Rp 15.000</p>
+              </div>
+            </div>
+
+            <!-- Kartu Varian 2 -->
+            <div
+              class="variant-card fade-in bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out"
+            >
+              <img
+                src="fotoproduk/pisangg-nuget_tiramisu.jpg"
+                alt="Pisang Nugget Tiramisu"
+                class="w-full h-56 object-cover"
+              />
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2 capitalize">tiramisu</h3>
+                <p class="text-lg font-semibold text-amber-600">Rp 15.000</p>
+              </div>
+            </div>
+
+            <!-- Kartu Varian 3 -->
+            <div
+              class="variant-card fade-in bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out"
+            >
+              <img
+                src="fotoproduk/cruncy.jpg"
+                alt="Pisang Nugget Coklat Crunchy"
+                class="w-full h-56 object-cover"
+              />
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2 capitalize">
+                  coklat crunchy
+                </h3>
+                <p class="text-lg font-semibold text-amber-600">Rp 18.000</p>
+              </div>
+            </div>
+
+            <!-- Kartu Varian 4 -->
+            <div
+              class="variant-card fade-in bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out"
+            >
+              <img
+                src="fotoproduk/pisang_nuget_greentea_redvelvet.jpg"
+                alt="Pisang Nugget Green Tea"
+                class="w-full h-56 object-cover"
+              />
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2 capitalize">green tea</h3>
+                <p class="text-lg font-semibold text-amber-600">Rp 15.000</p>
+              </div>
+            </div>
+
+            <!-- Kartu Varian 5 -->
+            <div
+              class="variant-card fade-in bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out"
+            >
+              <img
+                src="fotoproduk/psngngt_cover.jpg"
+                alt="Aneka Toping Pisang Nugget"
+                class="w-full h-56 object-cover"
+              />
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2 capitalize">
+                  toping (keju, red velvet, milo, oreo)
+                </h3>
+                <p class="text-lg font-semibold text-amber-600">
+                  double toping +3.000
+                </p>
+              </div>
             </div>
           </div>
-          <div class="variant-card">
-            <img
-              src="fotoproduk/pisangg-nuget_tiramisu.jpg"
-              alt="Tela-tela Rasa Jagung Bakar"
-            />
-            <div class="variant-info">
-              <h3>tiramisu</h3>
-              <p class="variant-price">Rp 15.000</p>
-            </div>
-          </div>
-          <div class="variant-card">
-            <img
-              src="fotoproduk/cruncy.jpg"
-              alt="Tela-tela Rasa Jagung Bakar"
-            />
-            <div class="variant-info">
-              <h3>coklat crunchy</h3>
-              <p class="variant-price">Rp 18.000</p>
-            </div>
-          </div>
-          <div class="variant-card">
-            <img
-              src="fotoproduk/pisang_nuget_greentea_redvelvet.jpg"
-              alt="Tela-tela Rasa Jagung Bakar"
-            />
-            <div class="variant-info">
-              <h3>green tea</h3>
-              <p class="variant-price">Rp 15.000</p>
-            </div>
-          </div>
-          <div class="variant-card">
-            <img
-              src="fotoproduk/psngngt_cover.jpg"
-              alt="Tela-tela Rasa Jagung Bakar"
-            />
-            <div class="variant-card">
-              <h3>toping (keju, red velvet, milo, oreo)</h3>
-              <p class="variant-price">double toping +3.000</p>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </main>
 
-    <footer>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-6 mt-12">
       <p>&copy; 2025 Iyra.id. Hak Cipta Dilindungi.</p>
     </footer>
-
-    <script src="script.js"></script>
   </body>
 </html>
