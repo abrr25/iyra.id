@@ -4,7 +4,107 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Produk - Iyra.id</title>
-    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      /* Pengaturan dasar untuk body */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f4f4f4;
+      }
+
+      /* Pengaturan untuk Header */
+      header {
+        background-color: #fff;
+        padding: 10px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #ddd;
+      }
+      .logo {
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+      .logo span {
+        color: #ff6347; /* Warna oranye tomat */
+      }
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+      nav li {
+        margin-left: 20px;
+      }
+      nav a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+      }
+      nav a:hover {
+        color: #ff6347;
+      }
+
+      /* Pengaturan utama untuk konten produk */
+      main {
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto; /* Tengah secara horizontal */
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 2em;
+      }
+
+      /* INI BAGIAN PENTING: Grid untuk Produk */
+      .products-grid {
+        display: grid;
+        /* Membuat kolom yang responsif */
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px; /* Jarak antar kartu produk */
+      }
+
+      /* Desain untuk setiap kartu produk */
+      .product-card {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden; /* Penting agar gambar tidak keluar dari border */
+        text-decoration: none;
+        color: #333;
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      }
+      .product-card:hover {
+        transform: translateY(-5px); /* Efek mengangkat saat disentuh */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+      .product-card img {
+        width: 100%; /* Membuat gambar memenuhi lebar kartu */
+        height: 200px; /* Memberi tinggi yang seragam */
+        object-fit: cover; /* Memastikan gambar terpotong rapi, tidak gepeng */
+        display: block;
+      }
+      .product-info {
+        padding: 15px;
+        text-align: center;
+      }
+      .product-info h3 {
+        margin: 0;
+        font-size: 1.2em;
+      }
+
+      /* Pengaturan Footer */
+      footer {
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+        background-color: #333;
+        color: #fff;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -18,54 +118,75 @@
       </nav>
     </header>
 
-    <main class="main-gradient">
-      <section id="products" class="content-block">
+    <main>
+      <section id="products">
         <h2>Pilihan Menu Kami</h2>
-        <div class="products-grid fade-in">
+        <div class="products-grid">
           <a href="tela_tela.html" class="product-card">
-            <img src="fotoproduk/tela-tela.cover.jpg" alt="Produk Tela-tela" />
+            <img
+              src="https://placehold.co/400x300/orange/white?text=Tela-tela"
+              alt="Produk Tela-tela"
+            />
             <div class="product-info">
               <h3>Tela-tela</h3>
             </div>
           </a>
+
           <a href="bakso_mie.html" class="product-card">
             <img
-              src="fotoproduk/bakso_jebew.jpg"
+              src="https://placehold.co/400x300/red/white?text=Bakso+Mie"
               alt="Produk Bakso & Mie Jebew"
             />
             <div class="product-info">
               <h3>Bakso & Mie Jebew</h3>
             </div>
           </a>
+
           <a href="mie_jebew.html" class="product-card">
-            <img src="fotoproduk/mie_jebew.jpg" alt="Produk Mie Jebew" />
+            <img
+              src="https://placehold.co/400x300/brown/white?text=Mie+Jebew"
+              alt="Produk Mie Jebew"
+            />
             <div class="product-info">
               <h3>Mie Jebew</h3>
             </div>
           </a>
+
           <a href="cireng_isi.html" class="product-card">
-            <img src="fotoproduk/cireng_cover.jpg" alt="Produk Cireng Isi" />
+            <img
+              src="https://placehold.co/400x300/grey/white?text=Cireng+Isi"
+              alt="Produk Cireng Isi"
+            />
             <div class="product-info">
               <h3>Cireng Isi</h3>
             </div>
           </a>
+
           <a href="pisang_nugget.html" class="product-card">
             <img
-              src="fotoproduk/psngngt_cover.jpg"
+              src="https://placehold.co/400x300/yellow/black?text=Pisang+Nugget"
               alt="Produk Pisang Nugget"
             />
             <div class="product-info">
               <h3>Pisang Nugget</h3>
             </div>
           </a>
+
           <a href="pisang_peppe.html" class="product-card">
-            <img src="fotoproduk/pisang_peppe.jpg" alt="Produk Pisang Peppe" />
+            <img
+              src="https://placehold.co/400x300/green/white?text=Pisang+Peppe"
+              alt="Produk Pisang Peppe"
+            />
             <div class="product-info">
               <h3>Pisang Peppe</h3>
             </div>
           </a>
+
           <a href="dagtus.html" class="product-card">
-            <img src="fotoproduk/dagtus.jpg" alt="Produk Dagtus" />
+            <img
+              src="https://placehold.co/400x300/purple/white?text=Dagtus"
+              alt="Produk Dagtus"
+            />
             <div class="product-info">
               <h3>Dagtus</h3>
             </div>
@@ -77,7 +198,5 @@
     <footer>
       <p>&copy; 2025 Iyra.id. Hak Cipta Dilindungi.</p>
     </footer>
-
-    <script src="script.js"></script>
   </body>
 </html>
