@@ -4,183 +4,212 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Produk - Iyra.id</title>
-
+    <!-- Memuat Tailwind CSS untuk styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Memuat Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-      /* Pengaturan dasar untuk body */
+      /* Custom styles untuk melengkapi Tailwind */
       body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        background-color: #f4f4f4;
-      }
-
-      /* Pengaturan untuk Header */
-      header {
-        background-color: #fff;
-        padding: 10px 40px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid #ddd;
-      }
-      .logo {
-        font-size: 1.5em;
-        font-weight: bold;
+        font-family: "Poppins", sans-serif;
+        background-color: #f7fafc;
       }
       .logo span {
-        color: #ff6347; /* Warna oranye tomat */
+        color: #f59e0b; /* Warna kuning-oranye */
       }
-      nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
+      /* Animasi fade-in sederhana */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
-      nav li {
-        margin-left: 20px;
-      }
-      nav a {
-        text-decoration: none;
-        color: #333333;
-        font-weight: bold;
-      }
-      nav a:hover {
-        color: #ff6347;
-      }
-
-      /* Pengaturan utama untuk konten produk */
-      main {
-        padding: 20px;
-        max-width: 1200px;
-        margin: 0 auto; /* Tengah secara horizontal */
-      }
-      h2 {
-        text-align: center;
-        margin-bottom: 30px;
-        font-size: 2em;
-      }
-
-      /* INI BAGIAN PENTING: Grid untuk Produk */
-      .products-grid {
-        display: grid;
-        /* Membuat kolom yang responsif */
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px; /* Jarak antar kartu produk */
-      }
-
-      /* Desain untuk setiap kartu produk */
+      /* Menerapkan animasi pada setiap kartu dengan sedikit penundaan */
       .product-card {
-        background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        overflow: hidden; /* Penting agar gambar tidak keluar dari border */
-        text-decoration: none;
-        color: #333;
-        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        opacity: 0; /* Mulai dengan transparan untuk animasi */
+        animation: fadeIn 0.8s ease-out forwards;
       }
-      .product-card:hover {
-        transform: translateY(-5px); /* Efek mengangkat saat disentuh */
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      .product-card:nth-child(1) {
+        animation-delay: 0.1s;
       }
-      .product-card img {
-        width: 100%; /* Membuat gambar memenuhi lebar kartu */
-        height: 200px; /* Memberi tinggi yang seragam */
-        object-fit: cover; /* Memastikan gambar terpotong rapi, tidak gepeng */
-        display: block;
+      .product-card:nth-child(2) {
+        animation-delay: 0.2s;
       }
-      .product-info {
-        padding: 15px;
-        text-align: center;
+      .product-card:nth-child(3) {
+        animation-delay: 0.3s;
       }
-      .product-info h3 {
-        margin: 0;
-        font-size: 1.2em;
+      .product-card:nth-child(4) {
+        animation-delay: 0.4s;
       }
-
-      /* Pengaturan Footer */
-      footer {
-        text-align: center;
-        padding: 20px;
-        margin-top: 40px;
-        background-color: #333;
-        color: #fff;
+      .product-card:nth-child(5) {
+        animation-delay: 0.5s;
+      }
+      .product-card:nth-child(6) {
+        animation-delay: 0.6s;
+      }
+      .product-card:nth-child(7) {
+        animation-delay: 0.7s;
       }
     </style>
   </head>
-  <body>
-    <header>
-      <div class="logo">Iyra.<span>id</span></div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Beranda</a></li>
-          <li><a href="produk.html">Produk</a></li>
-          <li><a href="Bio_brand.html">Tentang Kami</a></li>
-        </ul>
-      </nav>
+  <body class="bg-gray-50 text-gray-800">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-10">
+      <div
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <div class="logo text-2xl font-bold text-gray-800">
+          Iyra.<span>id</span>
+        </div>
+        <nav>
+          <ul class="flex space-x-6">
+            <li>
+              <a
+                href="index.html"
+                class="text-gray-600 hover:text-amber-500 transition duration-300"
+                >Beranda</a
+              >
+            </li>
+            <li>
+              <a
+                href="produk.html"
+                class="text-amber-500 font-semibold border-b-2 border-amber-500 pb-1"
+                >Produk</a
+              >
+            </li>
+            <li>
+              <a
+                href="Bio_brand.html"
+                class="text-gray-600 hover:text-amber-500 transition duration-300"
+                >Tentang Kami</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
-    <main>
-      <section id="products">
-        <h2>Pilihan Menu Kami</h2>
-        <div class="products-grid">
-          <a href="tela_tela.html" class="product-card">
-            <img src="fotoproduk/tela-tela.cover.jpg" alt="Produk Tela-tela" />
-            <div class="product-info">
-              <h3>Tela-tela</h3>
+    <!-- Main Content -->
+    <main class="py-12">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center text-gray-800 mb-10">
+          Pilihan Menu Kami
+        </h2>
+
+        <!-- Grid Produk -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <a
+            href="tela_tela.html"
+            class="product-card block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out"
+          >
+            <img
+              src="fotoproduk/tela-tela.cover.jpg"
+              alt="Produk Tela-tela"
+              class="w-full h-56 object-cover"
+            />
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-bold">Tela-tela</h3>
             </div>
           </a>
 
-          <a href="bakso_mie.html" class="product-card">
+          <a
+            href="bakso_mie.html"
+            class="product-card block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out"
+          >
             <img
               src="fotoproduk/bakso_jebew.jpg"
               alt="Produk Bakso & Mie Jebew"
+              class="w-full h-56 object-cover"
             />
-            <div class="product-info">
-              <h3>Bakso & Mie Jebew</h3>
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-bold">Bakso & Mie Jebew</h3>
             </div>
           </a>
 
-          <a href="mie_jebew.html" class="product-card">
-            <img src="fotoproduk/mie_jebew.jpg" alt="Produk Mie Jebew" />
-            <div class="product-info">
-              <h3>Mie Jebew</h3>
+          <a
+            href="mie_jebew.html"
+            class="product-card block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out"
+          >
+            <img
+              src="fotoproduk/mie_jebew.jpg"
+              alt="Produk Mie Jebew"
+              class="w-full h-56 object-cover"
+            />
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-bold">Mie Jebew</h3>
             </div>
           </a>
 
-          <a href="cireng_isi.html" class="product-card">
-            <img src="fotoproduk/cireng_cover.jpg" alt="Produk Cireng Isi" />
-            <div class="product-info">
-              <h3>Cireng Isi</h3>
+          <a
+            href="cireng_isi.html"
+            class="product-card block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out"
+          >
+            <img
+              src="fotoproduk/cireng_cover.jpg"
+              alt="Produk Cireng Isi"
+              class="w-full h-56 object-cover"
+            />
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-bold">Cireng Isi</h3>
             </div>
           </a>
 
-          <a href="pisang_nugget.html" class="product-card">
+          <a
+            href="pisang_nugget.html"
+            class="product-card block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out"
+          >
             <img
               src="fotoproduk/psngngt_cover.jpg"
               alt="Produk Pisang Nugget"
+              class="w-full h-56 object-cover"
             />
-            <div class="product-info">
-              <h3>Pisang Nugget</h3>
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-bold">Pisang Nugget</h3>
             </div>
           </a>
 
-          <a href="pisang_peppe.html" class="product-card">
-            <img src="fotoproduk/pisang_peppe.jpg" alt="Produk Pisang Peppe" />
-            <div class="product-info">
-              <h3>Pisang Peppe</h3>
+          <a
+            href="pisang_peppe.html"
+            class="product-card block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out"
+          >
+            <img
+              src="fotoproduk/pisang_peppe.jpg"
+              alt="Produk Pisang Peppe"
+              class="w-full h-56 object-cover"
+            />
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-bold">Pisang Peppe</h3>
             </div>
           </a>
 
-          <a href="dagtus.html" class="product-card">
-            <img src="fotoproduk/dagtus.jpg" alt="Produk Dagtus" />
-            <div class="product-info">
-              <h3>Dagtus</h3>
+          <a
+            href="dagtus.html"
+            class="product-card block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out"
+          >
+            <img
+              src="fotoproduk/dagtus.jpg"
+              alt="Produk Dagtus"
+              class="w-full h-56 object-cover"
+            />
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-bold">Dagtus</h3>
             </div>
           </a>
         </div>
-      </section>
+      </div>
     </main>
 
-    <footer>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-6 mt-12">
       <p>&copy; 2025 Iyra.id. Hak Cipta Dilindungi.</p>
     </footer>
   </body>
